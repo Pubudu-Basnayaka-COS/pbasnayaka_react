@@ -11,8 +11,13 @@ function App() {
         <div id="main-container" className="App">
             <div id="inner-container">
                 <div id="sidebar">
-                    <AvatarComponent/>
-                    <NavComponent/>
+                    <div className="sidebar-top">
+                        <AvatarComponent/>
+                    </div>
+                    <div className="sidebar-bottom">
+                        <NavComponent/>
+
+                    </div>
                 </div>
                 <div id="content-wrap">
                     <ContentComponent/>

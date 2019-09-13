@@ -9,8 +9,9 @@ export default class AvatarComponent extends Component {
     };
     return (
         <div id="avatar-container">
-          <div className="avatar" style={avatarStyle} >
-
+          <div className="shape">
+            <div className="avatar" style={avatarStyle} >
+            </div>
           </div>
 
         </div>
