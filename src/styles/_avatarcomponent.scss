@@ -5,13 +5,13 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  animation: spin 62s linear infinite;
+ // animation: spin 62s linear infinite;
 }
 .shape{
   height: 230px;
   width: 230px;
   border-radius: 60% 40% 56% 44% / 35% 33% 67% 65% ;
-  animation: morph 22s ease-in-out 1 both alternate;
+ // animation: morph 22s ease-in-out 1 both alternate;
   overflow: hidden;
   position:absolute;
   z-index: 5;
@@ -30,7 +30,7 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  animation: spin 62s linear infinite reverse;
+ // animation: spin 62s linear infinite reverse;
   opacity: 1;
   z-index: 2;
 }
