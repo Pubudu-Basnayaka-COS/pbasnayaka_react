@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/_navcomponent.scss';
 
 export default class NavComponent extends Component {
   render() {
@@ -15,7 +16,7 @@ export default class NavComponent extends Component {
               <a href="#">Creative</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Inquire</a>
             </li>
           </ul>
 
