@@ -5,26 +5,29 @@ import './styles/_main.scss';
 import NavComponent from './components/NavComponent';
 import ContentComponent from './components/ContentComponent';
 import AvatarComponent from './components/AvatarComponent';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
     return (
-        <div id="main-container" className="App">
-            <div id="inner-container">
-                <div id="sidebar">
-                    <div className="sidebar-top">
-                        <AvatarComponent/>
+        <Router>
+            <div id="main-container" className="App">
+                <div id="inner-container">
+                    <div id="sidebar">
+                        <div className="sidebar-top">
+                            <AvatarComponent/>
+                        </div>
+                        <div className="sidebar-bottom">
+                            <NavComponent/>
+
+                        </div>
                     </div>
-                    <div className="sidebar-bottom">
-                        <NavComponent/>
+                    <div id="content-wrap">
+                        <ContentComponent/>
 
                     </div>
-                </div>
-                <div id="content-wrap">
-                    <ContentComponent/>
-
                 </div>
             </div>
-        </div>
+        </Router>
     );
 }
 
