@@ -1,38 +1,41 @@
 #avatar-container{
-  height: 230px;
-  width: 230px;
+  height: 300px;
+  width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
- // animation: spin 62s linear infinite;
+  // animation: spin 62s linear infinite;
 }
 .shape{
-  height: 230px;
-  width: 230px;
+  height: 300px;
+  width: 300px;
   border-radius: 60% 40% 56% 44% / 35% 33% 67% 65% ;
- // animation: morph 22s ease-in-out 1 both alternate;
+  // animation: morph 22s ease-in-out 1 both alternate;
   overflow: hidden;
   position:absolute;
   z-index: 5;
+  -moz-transition: all .51s;
+  -o-transition: all .51s;
+  -webkit-transition: all .51s;
+  transition: all .51s;
+  &:hover{
+    border-radius: 50%;
+  }
 
 }
 .avatar{
-  width: 142%;
-  height: 142%;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: -21%;
-  top: -21%;
-  background-size: 100%;
-  background-position: center center;
+  background-size: 155%;
   align-items: center;
-  background-position-y: 30px;
-  justify-content: center;
-  text-align: center;
-  text-transform: uppercase;
- // animation: spin 62s linear infinite reverse;
+  background-position-x: 58%;
+  background-position-y: 33%;
   opacity: 1;
   z-index: 2;
+  // animation: spin 62s linear infinite reverse;
+
 }
 
 

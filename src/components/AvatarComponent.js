@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import '../styles/_avatarcomponent.scss';
-import Avatar from "../images/avatar1.jpg";
+import Avatar from "../images/avatar3.jpg";
 
 export default class AvatarComponent extends Component {
   render() {
     var avatarStyle = {
-      //backgroundImage: 'url(' + Avatar + ')',
+       backgroundImage: 'url(' + Avatar + ')',
     };
     return (
         <div id="avatar-container">
