@@ -8,10 +8,12 @@ export default class CreativeWorkComponent extends Component {
         creativework: []
     }
     componentDidMount() {
-        axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work`)
+        axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work?include=field_creative_thumbnail`)
             .then(res => {
                 const data = res.data.data;
+                const included = res.data.included;
                 console.log(data)
+                console.log(included)
                 this.setState({ creativework : data });
             })
     }
