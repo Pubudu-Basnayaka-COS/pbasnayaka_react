@@ -12,14 +12,19 @@ function App() {
         <Router>
             <div id="main-container" className="App">
                 <div id="inner-container">
-                    <div id="sidebar">
-                        <div className="sidebar-top">
-                            <AvatarComponent/>
-                        </div>
-                        <div className="sidebar-bottom">
-                            <NavComponent/>
+                    <div id="sidebar-container">
+                        <div id="sidebar">
+                            <div className="sidebar-top">
+                                <AvatarComponent/>
+                            </div>
+                            <div className="sidebar-bottom">
+                                <NavComponent/>
 
+                            </div>
                         </div>
+                    </div>
+                    <div id="sidebar-padding">
+
                     </div>
                     <div id="content-wrap">
                         <ContentComponent/>
