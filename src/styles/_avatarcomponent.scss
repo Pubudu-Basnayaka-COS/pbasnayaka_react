@@ -1,7 +1,8 @@
 #avatar-container{
-  height: 250px;
-  width: 250px;
-  display: block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;

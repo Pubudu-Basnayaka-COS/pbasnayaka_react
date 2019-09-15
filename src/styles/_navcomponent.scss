@@ -1,11 +1,17 @@
 ul{
-  list-style: none;
-  li{
-    float: left;
-    padding-right: 15px;
-  }
-}
+   list-style: none;
+   li{
+     margin-bottom: 1.5em;
+     padding-right: 15px;
+   }
+ }
 
 .nav{
   display: block;
+  font-size: 20px;
+  text-align: center;
+  a{
+    color: #fff;
+  }
+
 }
