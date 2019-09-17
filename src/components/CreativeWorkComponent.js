@@ -27,15 +27,15 @@ export default class CreativeWorkComponent extends Component {
     render() {
         return (
             <div>
-                {/*{this.state.creativework.map((work_item) => (*/}
-                    {/*<div className="card">*/}
-                        {/*<div className="card-body">*/}
-                            {/*<h3 className="card-title">{work_item.attributes.title}</h3>*/}
-                            {/*<img src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}*/}
-                                 {/*alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*))}*/}
+                {this.state.creativework.map((work_item) => (
+                    <div className="card">
+                        <div className="card-body">
+                            <h3 className="card-title">{work_item.attributes.title}</h3>
+                            <img src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                 alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                        </div>
+                    </div>
+                ))}
             </div>
         )
     }
