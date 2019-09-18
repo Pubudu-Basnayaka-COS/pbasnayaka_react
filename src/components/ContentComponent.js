@@ -6,6 +6,9 @@ import Creative from '../pages/Creative';
 import Inquire from '../pages/Inquire';
 
 export default class ContentComponent extends Component {
+
+
+
     render() {
         return (
             <div className="content-inner">
