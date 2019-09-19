@@ -29,7 +29,7 @@ export default class CreativeWorkComponent extends Component {
     render() {
         return (
             <div>
-                <Example/>
+                <CreativeCard/>
                 {this.state.creativework.map((work_item, i) => (
                     <div className="card" key={i}>
                         <div className="card-body">
