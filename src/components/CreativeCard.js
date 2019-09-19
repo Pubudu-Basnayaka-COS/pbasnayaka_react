@@ -9,17 +9,20 @@ const slides = [
     { id: 3, url: 'https://pbasnayaka.com/sites/default/files/styles/style_web_work_thumbnail/public/2019-09/3_0.jpg?h=eebd6862&itok=vGClVcS7' },
 ]
 
-const CreativeCard = () => {
+const CreativeCard = (props) => {
     const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
-    const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
-
+    const trans = (x, y, s) => `perspective(320px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+    const [cardprops, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
     return (
+        //see https://reactjs.org/docs/events.html#touch-events for touch events
+
         <animated.div
-            class="card"
+            class="cool-card"
             onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+            onTouchMove ={({ touches: touch }) => set({ xys: calc(touch[0].clientX, touch[0].clientY) })}
+            onTouchEnd = {() => set({xys: [0, 0, 1]})}
             onMouseLeave={() => set({xys: [0, 0, 1]})}
-            style={{ transform: props.xys.interpolate(trans), backgroundImage: `url(${slides[0].url})` }}
+            style={{ transform: cardprops.xys.interpolate(trans), backgroundImage: `url(${props.imageUrl})` }}
         />
     )
 
