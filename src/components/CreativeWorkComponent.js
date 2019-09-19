@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../styles/_navcomponent.scss';
 import axios from 'axios';
-
+import CreativeCard from './CreativeCard';
 
 export default class CreativeWorkComponent extends Component {
 
@@ -22,19 +22,21 @@ export default class CreativeWorkComponent extends Component {
 
                 //first generate thumbnail links
 
-                this.setState({ creativework : data });
+                this.setState({creativework: data});
             })
     }
 
     render() {
         return (
             <div>
+                <Example/>
                 {this.state.creativework.map((work_item, i) => (
                     <div className="card" key={i}>
-                        <div className="card-body" >
+                        <div className="card-body">
                             <h3 className="card-title">{work_item.attributes.title}</h3>
-                            <img src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
-                                 alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                            <img
+                                src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
                         </div>
                     </div>
                 ))}
