@@ -26,7 +26,17 @@ export default class CreativeWorkComponent extends Component {
             })
     }
 
+
     render() {
+
+        function setHtml(work_item){
+            console.log('work item');
+            console.log(work_item);
+            var html;
+            html = work_item.attributes.body != null ? work_item.attributes.body.processed : '';
+            return {__html: html};
+        }
+
         return (
             <div>
                 {this.state.creativework.map((work_item, i) => (
@@ -35,13 +45,15 @@ export default class CreativeWorkComponent extends Component {
 
                             <div className="img-part">
                                 <CreativeCard imageUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
-                                altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                                              altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+
                                 {/*<img*/}
                                 {/*src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}*/}
                                 {/*alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>*/}
                             </div>
                             <div className="desc-part">
                                 <h3 className="card-title">{work_item.attributes.title}</h3>
+                                <h3 className="card-body" dangerouslySetInnerHTML={setHtml(work_item)}></h3>
                             </div>
 
                         </div>
