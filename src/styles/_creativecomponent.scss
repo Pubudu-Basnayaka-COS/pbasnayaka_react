@@ -1,3 +1,18 @@
 .creative-card{
   margin-bottom: 100px;
+
+
+  .desc-part{
+    display: inline-block;
+    width: 10%;
+    height: 180px;
+    margin-left: 20px;
+
+  }
+
+  .img-part{
+    display: inline-block;
+    float: left;
+
+  }
 }

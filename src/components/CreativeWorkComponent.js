@@ -32,12 +32,18 @@ export default class CreativeWorkComponent extends Component {
                 {this.state.creativework.map((work_item, i) => (
                     <div className="creative-card" key={i}>
                         <div className="card-body">
-                            <h3 className="card-title">{work_item.attributes.title}</h3>
-                        <CreativeCard imageUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}/>
 
-                            {/*<img*/}
+                            <div className="img-part">
+                                <CreativeCard imageUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                                {/*<img*/}
                                 {/*src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}*/}
                                 {/*alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>*/}
+                            </div>
+                            <div className="desc-part">
+                                <h3 className="card-title">{work_item.attributes.title}</h3>
+                            </div>
+
                         </div>
                     </div>
                 ))}

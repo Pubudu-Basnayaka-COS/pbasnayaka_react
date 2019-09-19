@@ -23,6 +23,7 @@ const CreativeCard = (props) => {
             onTouchEnd = {() => set({xys: [0, 0, 1]})}
             onMouseLeave={() => set({xys: [0, 0, 1]})}
             style={{ transform: cardprops.xys.interpolate(trans), backgroundImage: `url(${props.imageUrl})` }}
+            aria-label={props.altText}
         />
     )
 
