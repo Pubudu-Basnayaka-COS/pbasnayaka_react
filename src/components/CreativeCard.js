@@ -10,9 +10,9 @@ const slides = [
 ]
 
 const CreativeCard = (props) => {
-    const calc = (x, y) => [-(y - window.innerHeight / 2) / 70, (x - window.innerWidth / 2) / 120, 1.02]
+    const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 100, 1.05]
     const trans = (x, y, s) => `perspective(320px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-    const [cardprops, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 1, tension: 100, friction: 4 } }))
+    const [cardprops, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 3, tension: 300, friction: 40 } }))
     return (
         //see https://reactjs.org/docs/events.html#touch-events for touch events
 

@@ -33,6 +33,7 @@ export default class CreativeWorkComponent extends Component {
             console.log('work item');
             console.log(work_item);
             var html;
+            //TODO better error checking to see if these are set?
             html = work_item.attributes.body != null ? work_item.attributes.body.processed : '';
             return {__html: html};
         }
@@ -53,7 +54,7 @@ export default class CreativeWorkComponent extends Component {
                             </div>
                             <div className="desc-part">
                                 <h3 className="card-title">{work_item.attributes.title}</h3>
-                                <h3 className="card-body" dangerouslySetInnerHTML={setHtml(work_item)}></h3>
+                                <div className="card-body" dangerouslySetInnerHTML={setHtml(work_item)}></div>
                             </div>
 
                         </div>
