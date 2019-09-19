@@ -44,7 +44,6 @@ export default class CreativeWorkComponent extends Component {
 
         return (
             <div>
-                <TransitionModal open="" open="" open="" open=""/>
                 {this.state.creativework.map((work_item, i) => (
                     <div className="creative-card" key={i}>
                         <div className="card-body">
