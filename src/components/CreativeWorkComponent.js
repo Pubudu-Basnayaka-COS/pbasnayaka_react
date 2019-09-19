@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import '../styles/_creativecomponent.scss';
 import axios from 'axios';
 import CreativeCard from './CreativeCard';
+import TransitionModal from './TransitionModal';
+
+
+
 
 export default class CreativeWorkComponent extends Component {
 
@@ -40,6 +44,7 @@ export default class CreativeWorkComponent extends Component {
 
         return (
             <div>
+                <TransitionModal open="" open="" open="" open=""/>
                 {this.state.creativework.map((work_item, i) => (
                     <div className="creative-card" key={i}>
                         <div className="card-body">
