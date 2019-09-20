@@ -14,7 +14,7 @@ export default class NavComponent extends Component {
             <li>
              <Link to='/web'>Web</Link>
             </li>
-            <li>
+            <li  onMouseEnter={() => this.props.updateHoverState(true)}  onMouseLeave={() => this.props.updateHoverState(false)}>
               <Link to='/creative'>Creative</Link>
             </li>
             <li>

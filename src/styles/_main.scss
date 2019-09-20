@@ -1,10 +1,7 @@
 @import "_colors.scss";
 
 #main-container{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content:center;
+  height: 100%;
 }
 
 #inner-container{
@@ -12,33 +9,40 @@
   height: 100%;
   min-width: 600px;
   min-height: 400px;
-  background-color: $grey-bg;
 }
 
 #sidebar{
   width: 30%;
-  min-width:300px;
-
-  display: inline-block;
-  background: $gold;
+  min-width: 300px;
+  max-width: 440px;
+  background: $sidebar-bg;
   height: 100%;
-  float:left;
+  position: fixed;
   .sidebar-top{
     height: 40%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    min-height:300px;
   }
   .sidebar-bottom{
     height: 40%;
     display: block;
   }
+
+}
+
+#sidebar-padding{
+  width: 30%;
+  min-width: 300px;
+  display: inline-block;
+  height: 100%;
 }
 #content-wrap{
   width: 60%;
+  height: 100%;
   display: inline-block;
   padding: 10px 10px 10px 0px;
-  display: flex;
   margin-left: auto;
   margin-right: auto;
 
@@ -48,10 +52,43 @@
   overflow-y: auto;
   height: 100%;
   padding: 20px;
+  padding-left: 50px;
+
 }
 
 body{
-  background: $grey-bg;
+  background: $content-bg;
   min-width: 850px; //todo mobile version
   min-height: 550px;
+}
+
+
+//typography
+a{
+  text-decoration: none;
+  text-underline: none;
+}
+
+.cool-card {
+  width: 320px;
+  height: 180px;
+  background: grey;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: 15px solid white;
+  margin-bottom:20px;
+}
+
+.cool-card:hover {
+  box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.4);
+}
+
+.modal-button{
+  &:hover{
+    cursor: pointer;
+  }
 }

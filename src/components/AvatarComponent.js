@@ -9,7 +9,9 @@ export default class AvatarComponent extends Component {
     };
     return (
         <div id="avatar-container">
-          <div className="shape">
+          <div className={
+              this.props.hover ? 'shape hovered' : 'shape'
+          } >
             <div className="avatar" style={avatarStyle} >
             </div>
           </div>

@@ -6,9 +6,12 @@ import Creative from '../pages/Creative';
 import Inquire from '../pages/Inquire';
 
 export default class ContentComponent extends Component {
+
+
+
     render() {
         return (
-            <div class="content-inner">
+            <div className="content-inner">
                 <Route exact path="/" component={Home} />
                 <Route path="/web" component={Web} />
                 <Route path="/creative" component={Creative} />
