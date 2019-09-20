@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import Img from 'react-image';
+
 
 const slides = [
     { id: 0, url: 'https://pbasnayaka.com/sites/default/files/styles/style_web_work_thumbnail/public/2019-09/cow.jpg?h=b75af4a6&itok=rKGkG7ms' },
@@ -44,13 +46,12 @@ const CreativeCard = (props) => {
         setOpen(false);
     };
 
-
     return (
         //see https://reactjs.org/docs/events.html#touch-events for touch events
         <div>
             <div className="modal-button" type="button" onClick={handleOpen}>
                 <animated.div
-                    class="cool-card"
+                    className="cool-card"
                     onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                     onTouchMove ={({ touches: touch }) => set({ xys: calc(touch[0].clientX, touch[0].clientY) })}
                     onTouchEnd = {() => set({xys: [0, 0, 1]})}
@@ -73,7 +74,11 @@ const CreativeCard = (props) => {
                 <Fade in={open}>
                     <div className={classes.paper}>
                         <div className="creative-image-full-container">
-                            <img className="creative-image-full" src={ props.imageUrl  } />
+                            {/*<img className="creative-image-full" src={ props.imageUrl  } />*/}
+                            <Img className="creative-image-full" src={props.imageUrl}
+                                 loader={<Img className="creative-image-full-preload" src={props.preloadImageUrl}/> }
+                            />
+
                         </div>
                     </div>
                 </Fade>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../styles/_creativecomponent.scss';
 import axios from 'axios';
 import CreativeCard from './CreativeCard';
-import TransitionModal from './TransitionModal';
+import LazyLoad from 'react-lazyload';
 
 
 
@@ -27,6 +27,16 @@ export default class CreativeWorkComponent extends Component {
                 //first generate thumbnail links
                 console.log(data)
                 this.setState({creativework: data});
+
+                //preload fullsize image using the preload style(smaller version)
+                this.state.creativework.map((work_item, i) => {
+                    console.log(work_item)
+                    const img = new Image();
+                    img.src = work_item.relationships.field_creative_picture.data[0].meta.imageDerivatives.links.preload.href;
+                });
+
+
+
             })
     }
 
@@ -34,8 +44,6 @@ export default class CreativeWorkComponent extends Component {
     render() {
 
         function setHtml(work_item){
-            console.log('work item');
-            console.log(work_item);
             var html;
             //TODO better error checking to see if these are set?
             html = work_item.attributes.body != null ? work_item.attributes.body.processed : '';
@@ -49,10 +57,13 @@ export default class CreativeWorkComponent extends Component {
                         <div className="card-body">
 
                             <div className="img-part">
-                                <CreativeCard thumbnailUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
-                                              imageUrl={work_item.relationships.field_creative_picture.data[0].meta.imageDerivatives.links.largecreative.href}
-                                              altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                                <LazyLoad height={200} offset={100}>
 
+                                    <CreativeCard thumbnailUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                                  imageUrl={work_item.relationships.field_creative_picture.data[0].meta.imageDerivatives.links.largecreative.href}
+                                                  preloadImageUrl={work_item.relationships.field_creative_picture.data[0].meta.imageDerivatives.links.preload.href}
+                                                  altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
+                                </LazyLoad>
                                 {/*<img*/}
                                 {/*src={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}*/}
                                 {/*alt={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>*/}
