@@ -1,12 +1,34 @@
 #avatar-container{
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   // animation: spin 62s linear infinite;
+  svg{
+    transform: scale(1) !important;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    margin-top: -25px;
+    position: relative;
+    z-index: 9;
+    fill: #141414;
+  }
+  .svg-container{
+    width: inherit;
+    height:inherit;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  width:auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
 }
 .shape{
   height: 250px;
@@ -53,5 +75,12 @@
 @keyframes spin {
   to {
     transform: rotate(1turn);
+  }
+}
+
+g{
+  .avatar{
+    height: 300px;
+    width: 300px;
   }
 }

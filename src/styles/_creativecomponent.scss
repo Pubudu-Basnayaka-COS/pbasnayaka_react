@@ -19,21 +19,21 @@
 
 
 .creative-image-full{
-    max-width: 80vh;
-    max-height: 80vh;
-    width: auto;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  max-width: 80vh;
+  max-height: 80vh;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 
   border: 30px solid #000;
-    padding: 16px 32px 24px;
-    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12);
-    background-color: #fff;
+  padding: 16px 32px 24px;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12);
+  background-color: #fff;
 }
 
 .creative-image-full-container{
@@ -46,8 +46,11 @@
 
 .creative-image-full-preload{
   @extend .creative-image-full;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  img{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+
 }
 
  
