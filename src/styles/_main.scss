@@ -62,8 +62,8 @@ body{
   background: $content-bg;
   min-width: 850px; //todo mobile version
   min-height: 550px;
-  padding-right: 64px;
-  overflow: hidden;
+  padding-right: 0px !important;
+  overflow-y: auto !important;
 }
 
 
