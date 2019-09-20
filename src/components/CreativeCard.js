@@ -14,17 +14,17 @@ const slides = [
 ]
 
 const useStyles = makeStyles(theme => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: '#fff',
+        border: '30px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
 }));
 
 
@@ -32,7 +32,7 @@ const CreativeCard = (props) => {
     const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 100, 1.05]
     const trans = (x, y, s) => `perspective(320px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
     const [cardprops, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 3, tension: 300, friction: 40 } }))
-  const classes = useStyles();
+    const classes = useStyles();
 
     const [open, setOpen] = React.useState(false);
 
@@ -49,15 +49,15 @@ const CreativeCard = (props) => {
         //see https://reactjs.org/docs/events.html#touch-events for touch events
         <div>
             <div className="modal-button" type="button" onClick={handleOpen}>
-         <animated.div
-                            class="cool-card"
-                            onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-                            onTouchMove ={({ touches: touch }) => set({ xys: calc(touch[0].clientX, touch[0].clientY) })}
-                            onTouchEnd = {() => set({xys: [0, 0, 1]})}
-                            onMouseLeave={() => set({xys: [0, 0, 1]})}
-                            style={{ transform: cardprops.xys.interpolate(trans), backgroundImage: `url(${props.imageUrl})` }}
-                            aria-label={props.altText}
-                        />            </div>
+                <animated.div
+                    class="cool-card"
+                    onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+                    onTouchMove ={({ touches: touch }) => set({ xys: calc(touch[0].clientX, touch[0].clientY) })}
+                    onTouchEnd = {() => set({xys: [0, 0, 1]})}
+                    onMouseLeave={() => set({xys: [0, 0, 1]})}
+                    style={{ transform: cardprops.xys.interpolate(trans), backgroundImage: `url(${props.thumbnailUrl})` }}
+                    aria-label={props.altText}
+                />            </div>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -72,7 +72,9 @@ const CreativeCard = (props) => {
             >
                 <Fade in={open}>
                     <div className={classes.paper}>
-                        modal content
+                        <div className="creative-image-full-container">
+                            <img className="creative-image-full" src={ props.imageUrl  } />
+                        </div>
                     </div>
                 </Fade>
             </Modal>

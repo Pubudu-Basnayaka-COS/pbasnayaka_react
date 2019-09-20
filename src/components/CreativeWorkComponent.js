@@ -20,12 +20,12 @@ export default class CreativeWorkComponent extends Component {
 
     componentDidMount() {
         let me = this;
-        axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work?include=field_creative_thumbnail`)
+        axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work`)
             .then(res => {
                 const data = res.data.data;
 
                 //first generate thumbnail links
-
+                console.log(data)
                 this.setState({creativework: data});
             })
     }
@@ -49,7 +49,8 @@ export default class CreativeWorkComponent extends Component {
                         <div className="card-body">
 
                             <div className="img-part">
-                                <CreativeCard imageUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                <CreativeCard thumbnailUrl={work_item.relationships.field_creative_thumbnail.data[0].meta.imageDerivatives.links.style_web_work_thumbnail.href}
+                                              imageUrl={work_item.relationships.field_creative_picture.data[0].meta.imageDerivatives.links.largecreative.href}
                                               altText={work_item.relationships.field_creative_thumbnail.data[0].meta.alt}/>
 
                                 {/*<img*/}
