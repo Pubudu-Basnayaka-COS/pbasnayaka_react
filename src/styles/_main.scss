@@ -1,4 +1,5 @@
 @import "_colors.scss";
+@import "_breakpoints.scss";
 
 #main-container{
   height: 100%;
@@ -12,12 +13,23 @@
 }
 
 #sidebar{
-  width: 30%;
-  min-width: 300px;
+  //todo mobile version
+  display:none;
   max-width: 440px;
   background: $sidebar-bg;
   height: 100%;
   position: fixed;
+  overflow: auto;
+
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: $content-bg; /* or add it to the track */
+  }
+  &::-webkit-scrollbar-thumb {
+    background:  $sidebar-bg;
+  }
   .sidebar-top{
     height: 40%;
     display: block;
@@ -29,16 +41,20 @@
     height: 40%;
     display: block;
   }
-
+  @include respond-to('medium') {
+    width:360px;
+    display:block;
+  }
 }
 
 #sidebar-padding{
-  width: 30%;
-  min-width: 300px;
-  max-width: 440px;
 
   display: inline-block;
   height: 100%;
+  @include respond-to('medium') {
+    width:360px;
+
+  }
 }
 #content-wrap{
   width: 60%;
@@ -62,8 +78,7 @@ body{
   background: $content-bg;
   min-width: 850px; //todo mobile version
   min-height: 550px;
-  padding-right: 0px !important;
-  overflow-y: auto !important;
+
 }
 
 
@@ -96,4 +111,6 @@ a{
     cursor: pointer;
   }
 }
+
+
 
