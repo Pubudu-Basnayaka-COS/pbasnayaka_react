@@ -18,7 +18,7 @@ export default class SidebarComponent extends Component {
 
 
     updateHoverState (hover) {
-        console.log('setting');
+       // console.log('setting');
         this.setState({ hover: hover })
     }
 

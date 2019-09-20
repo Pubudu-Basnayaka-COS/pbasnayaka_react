@@ -2,9 +2,9 @@ import React from 'react'
 import CreativeWorkComponent from '../components/CreativeWorkComponent';
 
 const Creative = () => (
-    <div>
+    <div >
         <h1> CREATIVE WORK TODO</h1>
-         <CreativeWorkComponent/>
+         <CreativeWorkComponent />
     </div>
 )
 
