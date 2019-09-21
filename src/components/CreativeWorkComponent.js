@@ -19,8 +19,7 @@ export default class CreativeWorkComponent extends Component {
     componentDidMount() {
         let localstorage_creative = localStorage.getItem('creativework');
 
-        if(localStorage.getItem('creativework') === 'false') {
-            console.log('here')
+        if(localstorage_creative == null) {
 
             axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work`)
                 .then(res => {
@@ -44,6 +43,7 @@ export default class CreativeWorkComponent extends Component {
 
                 })
         } else{
+
             this.setState({creativework: JSON.parse(localStorage.getItem('creativework'))});
         }
     }
