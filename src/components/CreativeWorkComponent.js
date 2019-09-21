@@ -21,7 +21,7 @@ export default class CreativeWorkComponent extends Component {
 
         if(localstorage_creative == null) {
 
-            axios.get(`https://pbasnayaka.com/jsonapi/node/creative_work`)
+            axios.get(`http://159.89.94.242:81/pbasnayaka/jsonapi/node/creative_work`)
                 .then(res => {
                     const data = res.data.data;
 
